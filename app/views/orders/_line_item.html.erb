@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <%= image_tag line_item.product.image.url(:thumb), class: 'product-image' %>
+    <div class="product-details">
+      <h5><%= line_item.product.name %></h5>
+      <p><%= line_item.product.description %></p>
+    </div>
+  </td>
+  <td><%= line_item.quantity %></td>
+  <td><%= number_to_currency(line_item.product.price, precision: 2) %></td>
+  <td><%= number_to_currency(line_item.total_price, precision: 2) %></td>
+</tr>
