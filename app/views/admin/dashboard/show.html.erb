@@ -1,2 +1,29 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<div class="container mt-4">
+  <h2>Admin Dashboard</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Products</strong></h5>
+          <p class="card-text">Total Products: <%= @product_count %></p>
+          <%= link_to 'View Products', admin_products_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><strong>Categories</strong></h5>
+          <p class="card-text">Total Categories: <%= @category_count %></p>
+          <div class="btn-group-horizontal">
+            <% Category.all.each do |category| %>
+              <%= link_to category.name, category_path(category), class: 'btn btn-primary' %>            
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
