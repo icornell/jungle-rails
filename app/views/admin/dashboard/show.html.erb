@@ -15,11 +15,7 @@
         <div class="card-body">
           <h5 class="card-title"><strong>Categories</strong></h5>
           <p class="card-text">Total Categories: <%= @category_count %></p>
-          <div class="btn-group-horizontal">
-            <% Category.all.each do |category| %>
-              <%= link_to category.name, category_path(category), class: 'btn btn-primary' %>            
-            <% end %>
-          </div>
+          <%= link_to 'View Categories', admin_categories_path, class: 'btn btn-primary' %>
         </div>
       </div>
     </div>
